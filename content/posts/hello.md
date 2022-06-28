@@ -1,16 +1,13 @@
 ---
-title: "数值统计"
+title: "测试文件2"
 date: 2022-06-27T16:48:09+08:00
 draft: false
 author: ["WuJunlin"]
-categories: 
-- 娱乐
 tags: 
 - Hugo
 - Blog
-description: ""
+description: "很显然这是一个测试文件"
 weight: # 输入1可以顶置文章，用来给文章展示排序，不填就默认按时间排序
-slug: ""
 comments: false
 showToc: false # 显示目录
 TocOpen: true # 自动展开目录
