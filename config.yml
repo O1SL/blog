@@ -1,4 +1,4 @@
-baseURL: "https://O1Sl.github.io/" # 绑定的域名
+baseURL: "https://www.wujunlin.top/" # 绑定的域名
 title: Wu's Blog # 主页下显示的浏览器标题
 paginate: 5 # 首页每页显示的文章数
 theme: PaperMod # 主题名字，和themes文件夹下的一致
