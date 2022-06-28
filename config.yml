@@ -1,0 +1,179 @@
+baseURL: "https://O1Sl.github.io/" # 绑定的域名
+title: Wu's Blog # 主页下显示的浏览器标题
+paginate: 5 # 首页每页显示的文章数
+theme: PaperMod # 主题名字，和themes文件夹下的一致
+# languageCode: zh-cn # en-us
+defaultContentLanguage: "zh" # 最顶部首先展示的语言页面
+# hasCJKLanguage: true # 自动检测是否包含 中文日文韩文 如果文章中使用了很多中文引号的话可以开启
+enableInlineShortcodes: true
+enableEmoji: true # 允许使用 Emoji 表情，建议 true
+enableRobotsTXT: true # 允许爬虫抓取到搜索引擎，建议 true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+#publishDir: docs #build后的输出目录 为了匹配github 使用docs 默认为public
+
+# googleAnalytics: UA-123-45
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Wu's Blog
+  description: "Wu's Blog"
+  keywords: [Blog, Portfolio, PaperMod]
+  author: "WuJunlin"
+  # author: ["Me", "You"] # multiple authors
+  # images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false # 是否禁止黑白主题切换
+
+  label: # 主页左上角的信息 
+    text: "Wu's Bloggggg"
+    icon: https://icon-1302751266.cos.ap-chengdu.myqcloud.com/cloud.png
+    iconHeight: 35
+
+  # home-info mode
+  homeInfoParams:
+    Title: "学着接受 试着改变 \U0001F44B"
+    Content: Welcome to my bloggggg
+    
+
+  ShowReadingTime: true # 显示阅读时间
+  ShowShareButtons: false # 文章底部显示分享按钮
+  # ShareButtons: ["linkedin", "twitter"]
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true #帖子标题上方添加面包屑导航以显示小节和导航到主页 
+  ShowCodeCopyButtons: false
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+
+  # 文章属性
+  # # hideFooter: true # 隐藏页脚
+  # ShowLastMod: true #显示文章更新时间
+  # ShowToc: true # 显示目录
+  # TocOpen: true # 自动展开目录
+  # showtoc: false
+  # tocopen: false  
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "<link / abs url>"
+    favicon16x16: "<link / abs url>"
+    favicon32x32: "<link / abs url>"
+    apple_touch_icon: "<link / abs url>"
+    safari_pinned_tab: "<link / abs url>"
+
+  # profile-mode 将索引/主页显示为带有社交链接和图像的完整页面
+  profileMode:
+    enabled: false # needs to be explicitly set
+    title: ExampleSite
+    subtitle: "This is subtitle"
+    imageUrl: "<img location>"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: my image
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/O1SL"
+    - name: RSS
+      url: "index.xml"
+  # icon列表 https://github.com/adityatelange/hugo-PaperMod/wiki/Icons
+
+  # analytics:
+  #   google:
+  #     SiteVerificationTag: "XYZabc"
+  #   bing:
+  #     SiteVerificationTag: "XYZabc"
+  #   yandex:
+  #     SiteVerificationTag: "XYZabc"
+
+  cover:
+    hidden: false # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  # editPost:
+  #   URL: "https://github.com/<path_to_repo>/content"
+  #   Text: "Suggest Changes" # edit text
+  #   appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+menu:
+  main:
+    - identifier: Archives
+      name: "文档 📄"
+      url: /archives/ 
+      weight: 10
+    - identifier: Tags
+      name: "标签 📎"
+      url: /tags/
+      weight: 15
+    - identifier: Search
+      name: "搜索 🔍"
+      url: /Search/
+      weight: 20
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true # HUGO 默认转义 Markdown 文件中的 HTML 代码，如需开启的话s
+    highlight:
+        # anchorLineNos: true
+        codeFences: true  
+        guessSyntax: true
+        lineNos: true
+        # noClasses: false
+        # style: monokai
+        style: darcula
+
+        # codeFences：代码围栏功能，这个功能一般都要设为 true 的，不然很难看，就是干巴巴的-代码文字，没有颜色。
+        # guessSyntax：猜测语法，这个功能建议设置为 true, 如果你没有设置要显示的语言则会自动匹配。
+        # hl_Lines：高亮的行号，一般这个不设置，因为每个代码块我们可能希望让高亮的地方不一样。
+        # lineNoStart：行号从编号几开始，一般从 1 开始。
+        # lineNos：是否显示行号，我比较喜欢显示，所以我设置的为 true.
+        # lineNumbersInTable：使用表来格式化行号和代码,而不是 标签。这个属性一般设置为 true.
+        # noClasses：使用 class 标签，而不是内嵌的内联样式
+
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
+
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
