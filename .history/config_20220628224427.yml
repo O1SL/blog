@@ -11,7 +11,7 @@ enableRobotsTXT: true # 允许爬虫抓取到搜索引擎，建议 true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
-# publishDir: docs #build后的输出目录 为了匹配github 使用docs 默认为public
+#publishDir: docs #build后的输出目录 为了匹配github 使用docs 默认为public
 
 # googleAnalytics: UA-123-45
 
