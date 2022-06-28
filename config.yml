@@ -1,6 +1,6 @@
 baseURL: "https://www.wujunlin.top/" # 绑定的域名
 title: Wu's Blog # 主页下显示的浏览器标题
-paginate: 5 # 首页每页显示的文章数
+paginate: 10 # 首页每页显示的文章数
 theme: PaperMod # 主题名字，和themes文件夹下的一致
 # languageCode: zh-cn # en-us
 defaultContentLanguage: "zh" # 最顶部首先展示的语言页面
