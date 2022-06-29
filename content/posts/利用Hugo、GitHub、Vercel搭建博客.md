@@ -86,7 +86,7 @@ GitHub在整个链路中充当一个中间商的角色，作为中转仓库
 注册账号后，链接GitHub
 ![vercel1](https://icon-1302751266.cos.ap-chengdu.myqcloud.com/%E5%88%A9%E7%94%A8Hugo%E3%80%81GitHub%E3%80%81Vercel%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/vercel1.png)
 
-创建新项目并导入上一部在GitHub中创建的项目，相关设置如图
+创建新项目并导入上一步在GitHub中创建的项目，相关设置如图
 ![vercel2](https://icon-1302751266.cos.ap-chengdu.myqcloud.com/%E5%88%A9%E7%94%A8Hugo%E3%80%81GitHub%E3%80%81Vercel%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/vercel2.png)
 
 在第三个部分要注意，需要设置Hugo的版本，不然Vercel会使用低版本来构建，可能会报错失败
