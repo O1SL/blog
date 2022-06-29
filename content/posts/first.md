@@ -1,6 +1,7 @@
 ---
 title: "测试文件2"
 date: 2020-06-27T16:48:09+08:00
+lastmod: 2022-01-08T23:33:37+08:00
 draft: false
 author: ["WuJunlin"]
 tags: 
