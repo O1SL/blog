@@ -1,5 +1,5 @@
 ---
-title: "利用Hugo、GitHub、Vercel搭建个人博客"
+title: "利用Hugo、GitHub、Vercel搭建博客"
 summary: "搭建一个方便、免费的个人博客"
 date: 2022-06-29T10:48:09+08:00
 lastmod: 2022-06-29T10:33:37+08:00
