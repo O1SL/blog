@@ -45,7 +45,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "学着接受 试着改变 \U0001F44B"
-    Content: Welcome to my blogggggx
+    Content: Welcome to my bloggggg
     
 
   ShowReadingTime: true # 显示阅读时间
