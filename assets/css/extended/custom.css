@@ -1,0 +1,44 @@
+/* 文章图缩小右置 */
+.post-entry {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.entry-cover {
+    overflow: hidden;
+    padding-left: 15px;
+    height: 100%;
+    width: 30%;
+    margin-bottom: unset;
+}
+
+.post-info {
+    display: inline-block;
+    overflow: hidden;
+    width: 90%;
+}
+
+/* 图片居中 */
+img[src$='#center']
+{
+    display: block;
+    margin: 0.7rem auto; /* you can replace the vertical '0.7rem' by
+                            whatever floats your boat, but keep the
+                            horizontal 'auto' for this to work */
+    /* whatever else styles you fancy here */
+}
+
+img[src$='#floatleft']
+{
+    float:left;
+    margin: 0.7rem;      /* this margin is totally up to you */
+    /* whatever else styles you fancy here */
+}
+
+img[src$='#floatright']
+{
+    float:right;
+    margin: 0.7rem;      /* this margin is totally up to you */
+    /* whatever else styles you fancy here */
+}
