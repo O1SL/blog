@@ -2,7 +2,7 @@ baseURL: "https://blog.wujunlin.top/" # 绑定的域名
 title: Wu's Blog # 主页下显示的浏览器标题
 paginate: 10 # 首页每页显示的文章数
 theme: PaperMod # 主题名字，和themes文件夹下的一致
-# languageCode: zh-cn # en-us
+languageCode: zh-cn # en-us
 defaultContentLanguage: "zh" # 最顶部首先展示的语言页面
 # hasCJKLanguage: true # 自动检测是否包含 中文日文韩文 如果文章中使用了很多中文引号的话可以开启
 enableInlineShortcodes: true
