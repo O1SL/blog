@@ -26,6 +26,8 @@ params:
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false # 是否禁止黑白主题切换
+  DateFormat: "2006-01-02"
+
 
   label: # 主页左上角的信息 
     text: "Wu's Bloggggg"
