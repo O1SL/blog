@@ -11,7 +11,10 @@ enableRobotsTXT: true # 允许爬虫抓取到搜索引擎，建议 true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+hasCJKLanguage: true # 字数统计包含汉字
 # publishDir: docs #build后的输出目录 为了匹配github 使用docs 默认为public
+# 变量说明地址
+# https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-variables/ 
 
 # googleAnalytics: UA-123-45
 
@@ -42,9 +45,10 @@ params:
     
 
   ShowReadingTime: true # 显示阅读时间
+
   ShowShareButtons: false # 文章底部显示分享按钮
   # ShareButtons: ["linkedin", "twitter"]
-  ShowPostNavLinks: true
+  ShowPostNavLinks: true # 底部显示下一篇标记
   ShowBreadCrumbs: true #帖子标题上方添加面包屑导航以显示小节和导航到主页 
   ShowCodeCopyButtons: false
   ShowWordCount: true
@@ -55,9 +59,10 @@ params:
   comments: false
   hidemeta: false
   hideSummary: false
+  page_view_conter: true
 
   # 文章属性
-  # # hideFooter: true # 隐藏页脚
+  # hideFooter: true # 隐藏页脚
   # ShowLastMod: true #显示文章更新时间
   # ShowToc: true # 显示目录
   # TocOpen: true # 自动展开目录
@@ -92,7 +97,7 @@ params:
     - name: github
       url: "https://github.com/O1SL"
     - name: RSS
-      url: "index.xml"
+      url: "index.xml" 
   # icon列表 https://github.com/adityatelange/hugo-PaperMod/wiki/Icons
 
   # analytics:
