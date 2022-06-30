@@ -2,7 +2,7 @@
 title: "利用Hugo、GitHub、Vercel搭建博客"
 summary: "搭建一个方便、免费的个人博客"
 date: 2022-06-29T10:48:09+08:00
-lastmod: 2022-06-29T10:33:37+08:00
+lastmod: ["lastmod", ":git", "date", "publishDate"]
 draft: false
 author: ["WuJunlin"]
 enableCoverzoom: true
@@ -20,7 +20,7 @@ cover:
     alt: ""
     relative: false
 ---
-### 前言
+## 前言
 
 之前在少数派上看过一些关于个人博客的文章，心里也有想法搭建个人博客，做一片自留地，来养成自己输出内容、记录生活的习惯，可以是生活感想、观影阅读、可以是业余爱好记录等等。
 
@@ -39,13 +39,13 @@ cover:
 
 最终使用了一家叫Vercel的服务提供商，来托管我的博客，在国外，不过国内访问速度尚可。不过托管服务是很容易可以更换的，在整个搭建链路中不是特别重要，很容易更换到其他托管服务提供商。
 
-### 最终链路
+## 最终链路
 
 <img loading="lazy" src="https://icon-1302751266.cos.ap-chengdu.myqcloud.com/%E5%88%A9%E7%94%A8Hugo%E3%80%81GitHub%E3%80%81Vercel%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/blod_chain.png" type="" alt="chian" class="medium-zoom-image">
 
-### 实现过程
+## 实现过程
 
-**Hugo**
+### Hugo
 
 安装Hugo环境，MacOS下可使用brew安装
 
@@ -68,17 +68,17 @@ cover:
 
     hugo server -D
 
-然后可以在 <http://localhost:1313/> 查看博客网站并进行调试
+然后可以在 [http://localhost:1313/](http://localhost:1313/) 查看博客网站并进行调试
 
 为了博客美观，还需要一个主题，可以去主题网站下载相关文件，然后放在themes目录下，再根据需要修改调试网站样式
 
-**GitHub**
+### GitHub
 
 GitHub在整个链路中充当一个中间商的角色，作为中转仓库
 
 在GitHub建立一个项目，利用git或者vscode等工具，链接本地环境和远程分支，这样就可以把本地的更新推送到Github中
 
-**Vercel**
+### Vercel
 
 注册账号后，链接GitHub
 <img loading="lazy" src="https://icon-1302751266.cos.ap-chengdu.myqcloud.com/%E5%88%A9%E7%94%A8Hugo%E3%80%81GitHub%E3%80%81Vercel%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/vercel1.png" type="" alt="vercel1" class="medium-zoom-image">
@@ -87,12 +87,13 @@ GitHub在整个链路中充当一个中间商的角色，作为中转仓库
 <img loading="lazy" src="https://icon-1302751266.cos.ap-chengdu.myqcloud.com/%E5%88%A9%E7%94%A8Hugo%E3%80%81GitHub%E3%80%81Vercel%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/vercel2.png" type="" alt="vercel2" class="medium-zoom-image">
 
 在第三个部分要注意，需要设置Hugo的版本，不然Vercel会使用低版本来构建，可能会报错失败
+
 <img loading="lazy" src="https://icon-1302751266.cos.ap-chengdu.myqcloud.com/%E5%88%A9%E7%94%A8Hugo%E3%80%81GitHub%E3%80%81Vercel%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/vercel3.png" type="" alt="vercel3" class="medium-zoom-image">
 
 然后点击Deploy开始运行，构建完成后，就可以通过Vercel给出的域名访问博客了，但是为了方便，还可以设置到自己的域名下面。
 
-首先到解析服务提供商处，添加1条域名解析记录，类型为 **CNAME** 指向 **cname.vercel-dns.com.** 再到Vercel的项目设置中绑定域名，值得注意的一点是，设置域名后，需要在Hugo的config文件中将baseURL设置为你的域名，这样就可以实现用自己的域名访问博客了。
+首先到解析服务提供商处，添加1条域名解析记录，类型为 **_CNAME_** 指向 **_cname.vercel-dns.com._** 再到Vercel的项目设置中绑定域名，值得注意的一点是，设置域名后，需要在Hugo的config文件中将baseURL设置为你的域名，这样就可以实现用自己的域名访问博客了。
 
 至此整个链路基本构建完毕，本文只记录了大致的思路和方向，由于不是一篇教程，所以略去了很多细节，尤其是在Hugo环节，作为一个完全不懂任何前端知识的小白，真的发现有很多坑！
 
-#### 立一个flag：认真写博客，记录生活
+### 最后立一个flag：认真写博客，记录生活
