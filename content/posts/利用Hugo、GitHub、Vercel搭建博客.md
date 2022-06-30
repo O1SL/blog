@@ -5,7 +5,7 @@ date: 2022-06-29T10:48:09+08:00
 lastmod: 2022-07-01T01:33:37+08:00
 draft: false
 author: ["WuJunlin"]
-enableCoverzoom: true
+enableCoverzoom: false
 tags: 
 - Hugo
 - Blog
