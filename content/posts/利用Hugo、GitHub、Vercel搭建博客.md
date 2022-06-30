@@ -49,24 +49,32 @@ cover:
 
 安装Hugo环境，MacOS下可使用brew安装
 
-    brew install hugo
+```shell
+brew install hugo
+```
 
 建立站点
 
-    hugo new site new_site
+```shell
+hugo new site new_site
+```
 
 然后程序会自动生成相关目录
 
-    ▸ archetypes/ #包括内容类型，在创建新内容时自动生成内容的配置
-    ▸ content/    # 网站内容，全部使用markdown格式
-    ▸ layouts/    # 网站模板文件，决定内容如何呈现
-    ▸ static/     # 图片、css、js 等静态资源
-    ▸ themes/     # 存放主题
-    config.toml   # 是网站的主配置文件
+```shell
+▸ archetypes/ #包括内容类型，在创建新内容时自动生成内容的配置
+▸ content/    # 网站内容，全部使用markdown格式
+▸ layouts/    # 网站模板文件，决定内容如何呈现
+▸ static/     # 图片、css、js 等静态资源
+▸ themes/     # 存放主题
+config.toml   # 是网站的主配置文件
+```
 
 本地调试
 
-    hugo server -D
+```shell
+hugo server -D
+```
 
 然后可以在 [http://localhost:1313/](http://localhost:1313/) 查看博客网站并进行调试
 
