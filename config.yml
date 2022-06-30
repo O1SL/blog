@@ -198,3 +198,10 @@ services:
     disableInlineCSS: true
   twitter:
     disableInlineCSS: true
+
+frontmatter:
+  lastmod:
+  - lastmod
+  - :git
+  - date
+  - publishDate
