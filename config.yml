@@ -14,7 +14,6 @@ buildFuture: false
 buildExpired: false
 enableEmoji: true
 hasCJKLanguage: true # 字数统计包含汉字
-enableGitInfo: true
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
