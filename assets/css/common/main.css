@@ -117,7 +117,7 @@ pre:hover .copy-code {
 }
 
 .meta-item:first-of-type:after {
-    content: "-";
+    content: "｜";
     margin-inline-start: .5em;
     margin-inline-end: .5em;
 }

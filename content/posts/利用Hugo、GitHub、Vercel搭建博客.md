@@ -1,8 +1,8 @@
 ---
 title: "利用Hugo、GitHub、Vercel搭建博客"
 summary: "搭建一个方便、免费的个人博客"
-date: 2022-06-29T10:48:09+08:00
-lastmod: ["lastmod", ":git", "date", "publishDate"]
+date: 2022-06-29
+lastmod: [":git", "date", "publishDate"]
 draft: false
 author: ["WuJunlin"]
 enableCoverzoom: true
@@ -96,4 +96,4 @@ GitHub在整个链路中充当一个中间商的角色，作为中转仓库
 
 至此整个链路基本构建完毕，本文只记录了大致的思路和方向，由于不是一篇教程，所以略去了很多细节，尤其是在Hugo环节，作为一个完全不懂任何前端知识的小白，真的发现有很多坑！
 
-### 最后立一个flag：认真写博客，记录生活
+> **最后立一个flag：认真写博客，记录生活**
