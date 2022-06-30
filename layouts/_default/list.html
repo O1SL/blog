@@ -7,19 +7,12 @@
 {{- if not .IsHome | and .Title }}
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}
-  <h1>
-    {{ .Title }}
-    {{- if and (or (eq .Kind `term`) (eq .Kind `section`)) (.Param "ShowRssButtonInSectionTermList") }}
-    <a href="index.xml" title="RSS" aria-label="RSS">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" height="23">
-        <path d="M4 11a9 9 0 0 1 9 9" />
-        <path d="M4 4a16 16 0 0 1 16 16" />
-        <circle cx="5" cy="19" r="1" />
-      </svg>
-    </a>
-    {{- end }}
-  </h1>
+  {{- if eq .Title "Tags" }}
+  <h1>{{ "标签 📎" }}</h1>
+  {{- end }}
+  {{- if ne .Title "Tags" }}
+    <h1>{{ .Title}}</h1>
+  {{- end }}
   {{- if .Description }}
   <div class="post-description">
     {{ .Description | markdownify }}
@@ -36,13 +29,20 @@
 </div>
 {{- end }}
 
-{{- $pages := union .RegularPages .Sections }}
+
+{{- $pages := .Pages }}
 
 {{- if .IsHome }}
-{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- end }}
 
-{{- $paginator := .Paginate $pages }}
+{{/* related issue: https://github.com/gohugoio/hugo/issues/9003 */}}
+{{ $paginator := "" }}
+{{ if (.Param "paginate") }}
+  {{- $paginator = .Paginate $pages (.Param "paginate") }}
+{{ else }}
+  {{- $paginator = .Paginate $pages }}
+{{ end }}
 
 {{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
 {{- partial "home_info.html" . }}
@@ -60,30 +60,68 @@
 {{- $class = "post-entry tag-entry" }}
 {{- end }}
 
+<!-- 通过增加一个变量来决定是否开启封面图缩小 -->
 <article class="{{ $class }}">
-  <div class="post-info">
-    <header class="entry-header">
-      <h2>
-        {{- .Title }}
-        {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
-      </h2>
-    </header>
-    {{- if (ne (.Param "hideSummary") true) }}
-    <div class="entry-content">
-      <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+  {{- if (.Param "enableCoverzoom") }}
+      <div class="post-info">
+        <header class="entry-header">
+          <h2>
+            {{- .Title }}
+            {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[Draft]</span></sup>{{- end }}
+            {{- if .Weight }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[Pinned]</span></sup>{{- end }}
+          </h2>
+        </header>
+        {{- if (ne (.Param "hideSummary") true) }}
+        <section class="entry-content">
+          {{ if .Description }}
+            <p>{{ .Description | plainify | htmlUnescape }}</p>
+          {{ else }}
+            <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+          {{ end }}
+        </section>
+        {{- end }}
+        {{- if not (.Param "hideMeta") }}
+        <footer class="entry-footer">
+          {{- partial "post_meta.html" . -}}
+        </footer>
+        {{- end }}
+      </div> 
+      {{- $isHidden := (site.Params.cover.hidden | default site.Params.cover.hiddenInList) }}
+      {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
+    <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+  {{ else }}
+    <div class="post-info">
+      {{- $isHidden := (site.Params.cover.hidden | default site.Params.cover.hiddenInList) }}
+      {{- partial "cover1.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
+      <header class="entry-header">
+        <h2>
+          {{- .Title }}
+          {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[Draft]</span></sup>{{- end }}
+          {{- if .Weight }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[Pinned]</span></sup>{{- end }}
+        </h2>
+      </header>
+      {{- if (ne (.Param "hideSummary") true) }}
+      <section class="entry-content">
+        {{ if .Description }}
+          <p>{{ .Description | plainify | htmlUnescape }}</p>
+        {{ else }}
+          <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+        {{ end }}
+      </section>
+      {{- end }}
+      {{- if not (.Param "hideMeta") }}
+      <footer class="entry-footer">
+        {{- partial "post_meta.html" . -}}
+      </footer>
+      {{- end }}
     </div>
-    {{- end }}
-    {{- if not (.Param "hideMeta") }}
-    <footer class="entry-footer">
-      {{- partial "post_meta.html" . -}}
-    </footer>
-    {{- end }}
-  </div>
-  {{- $isHidden := (site.Params.cover.hidden | default site.Params.cover.hiddenInList) }}
-  {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
   <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+{{- end }}
 </article>
 {{- end }}
+
+
+
 
 {{- if gt $paginator.TotalPages 1 }}
 <footer class="page-footer">

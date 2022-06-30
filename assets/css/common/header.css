@@ -7,8 +7,12 @@
     margin-inline-end: auto;
     line-height: var(--header-height);
 }
+.nav ul {
+    margin: 0;
+    padding: 0;
+}
 
-.nav a {
+.logo a {
     display: block;
 }
 
@@ -34,6 +38,7 @@
     transform: translate(0, -10%);
     border-radius: 6px;
     margin-inline-end: 8px;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 #theme-toggle svg {
@@ -67,11 +72,29 @@ body:not(.dark) #sun {
 
 #menu a {
     font-size: 16px;
+    font-weight: 500;
+    color: var(--secondary);
+    display: inline-block;
+    line-height: 1.5em;
+}
+#menu a:hover {
+    color: var(--primary);
 }
 
 #menu .active {
-    font-weight: 500;
-    border-bottom: 2px solid currentColor;
+    color: var(--primary);
+    box-shadow: 0 2px 0 var(--primary);
+}
+
+#menu .external-link {
+    position: relative;
+}
+#menu .external-link svg {
+    width: 13px;
+    height: auto;
+    position: relative;
+    top: 1px;
+    margin-left: 3px;
 }
 
 .lang-switch li,

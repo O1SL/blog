@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
+<html lang="{{ .Params.language | default .Language.Lang }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
 
 <head>
     {{- partial "head.html" . }}
+    {{- block "head" . }}{{ end }}
 </head>
 
 <body class="
@@ -14,10 +15,11 @@
 {{- end -}}
 " id="top">
     {{- partialCached "header.html" . .Page -}}
-    <main class="main">
+    <main class="main {{- if (eq .Kind `page`) -}}{{- print " post" -}}{{- end -}}">
         {{- block "main" . }}{{ end }}
     </main>
-    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+    {{ partial "footer.html" . -}}
+    {{- block "body_end" . }}{{ end }}
 </body>
 
 </html>
