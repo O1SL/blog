@@ -2,7 +2,7 @@
 title: "利用Hugo、GitHub、Vercel搭建博客"
 summary: "搭建一个方便、免费的个人博客"
 date: 2022-06-29
-lastmod: ["lastmod", ":git", "date", "publishDate"]
+lastmod: 2022-07-01 01:05
 draft: false
 author: ["WuJunlin"]
 enableCoverzoom: true
