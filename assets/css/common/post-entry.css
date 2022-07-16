@@ -1,6 +1,6 @@
 .first-entry {
     position: relative;
-    min-height: 200px;
+    min-height: 100px;
     margin: var(--gap) 0 calc(var(--gap) * 2) 0;
 }
 
